@@ -25,10 +25,24 @@
     <link rel="stylesheet" href="css/sections.css" />
     <link rel="stylesheet" href="css/timeline.css" />
     <link rel="stylesheet" href="css/team.css" />
-    <link rel="stylesheet" href="css/ctaband.css" />
+    <link rel="stylesheet" href="css/cta-band.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/preloader.css" />
   </head>
-  <body>
+  <body class="is-loading">
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader">
+      <div class="preloader__text">
+        <div class="preloader__word" id="preloaderMain"></div>
+        <div
+          class="preloader__word preloader__word--sub"
+          id="preloaderSub"
+        ></div>
+      </div>
+      <div class="preloader__line"></div>
+      <p class="preloader__tagline">Intentional Growth. Lasting Impact.</p>
+    </div>
+
     <!-- ===== NAVBAR ===== -->
     <header class="navbar">
       <div class="navbar__inner">
@@ -505,6 +519,7 @@
       </div>
     </footer>
 
+    <script src="js/preloader.js"></script>
     <script src="js/main.js"></script>
     <script>
       lucide.createIcons();

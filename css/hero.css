@@ -24,6 +24,13 @@
 .hero__inner {
   position: relative;
   z-index: 1;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 32px 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
 }
 
 /* Animación de entrada al cargar */
@@ -50,33 +57,29 @@
 }
 
 .hero__media {
+  position: relative;
+  overflow: visible;
   opacity: 0;
   transform: translateX(30px);
   animation: heroFadeRight 0.8s ease 0.3s forwards;
 }
 
-@keyframes heroFadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes heroFadeRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.hero__inner {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 32px 70px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 48px;
+/* Imagen/placeholder: bordes difuminados hacia el fondo oscuro */
+.hero__media img,
+.hero__media > div {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  -webkit-mask-image: radial-gradient(
+    ellipse 85% 85% at 55% 50%,
+    black 38%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 85% 85% at 55% 50%,
+    black 38%,
+    transparent 100%
+  );
 }
 
 .hero__content h1 {
@@ -98,17 +101,18 @@
   flex-wrap: wrap;
 }
 
-.hero__media {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.hero__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
+@keyframes heroFadeRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* ---- Responsive ---- */
@@ -128,5 +132,19 @@
 
   .hero__media {
     order: -1;
+  }
+
+  .hero__media img,
+  .hero__media > div {
+    -webkit-mask-image: radial-gradient(
+      ellipse 90% 80% at 50% 50%,
+      black 35%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 90% 80% at 50% 50%,
+      black 35%,
+      transparent 100%
+    );
   }
 }
