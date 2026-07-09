@@ -1,0 +1,230 @@
+.about-focus {
+  background-color: var(--color-bg-light);
+  padding: var(--section-padding) 0;
+}
+
+.about-focus__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* About */
+.about__label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+.about__label + .eyebrow-underline {
+  margin-bottom: 20px;
+}
+
+.about__text {
+  font-size: 0.97rem;
+  color: var(--color-text-dark-muted);
+  line-height: 1.75;
+}
+
+/* Our Focus */
+.focus__label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+.focus__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.focus-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: var(--shadow-card);
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.focus-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.focus-card__icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.focus-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.focus-card__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text-dark);
+  margin-bottom: 4px;
+}
+
+.focus-card__desc {
+  font-size: 0.82rem;
+  color: var(--color-text-dark-muted);
+  line-height: 1.55;
+}
+
+/* Quote debajo del About+Focus */
+.about-quote {
+  background-color: #eceae3;
+  padding: 28px 0;
+  text-align: center;
+}
+
+.about-quote p {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--color-text-dark-muted);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ---- Core Services (What We Do page) ---- */
+.services {
+  background-color: var(--color-bg-light);
+  padding: var(--section-padding) 0;
+}
+
+.services__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.services__header h2 {
+  font-size: 1.9rem;
+  margin-bottom: 14px;
+  color: var(--color-text-dark);
+}
+
+.services__header p {
+  color: var(--color-text-dark-muted);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.service-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--color-bg-dark-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: var(--color-accent);
+}
+
+.service-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.service-card__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  margin-bottom: 10px;
+}
+
+.service-card__desc {
+  font-size: 0.88rem;
+  color: var(--color-text-dark-muted);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+.service-card__arrow {
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+.service-card__arrow svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover .service-card__arrow svg {
+  transform: translateX(4px);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 968px) {
+  .about-focus__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .focus__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}

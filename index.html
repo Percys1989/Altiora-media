@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Altiora Media | Intentional Growth. Lasting Impact.</title>
+    <meta
+      name="description"
+      content="A Growth & Analytics Partner helping eCommerce and consumer brands grow with data-driven strategies, creative campaigns, and meaningful digital experiences."
+    />
+    <link rel="icon" href="images/favicon/favicon.ico" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/timeline.css" />
+    <link rel="stylesheet" href="css/team.css" />
+    <link rel="stylesheet" href="css/ctaband.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">
+          <!-- Reemplaza con: <img src="images/logo/altiora-logo.svg" alt="Altiora Media"> -->
+          <svg
+            width="36"
+            height="36"
+            viewBox="0 0 36 36"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 30 L18 6 L32 30"
+              stroke="#4ade80"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
+            <path
+              d="M24 18 L32 10"
+              stroke="#2f6b4f"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span class="navbar__logo-text">
+            <span class="brand-name">ALTIORA</span>
+            <span class="brand-sub">MEDIA</span>
+          </span>
+        </a>
+
+        <nav class="navbar__links" id="navLinks">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="what-we-do.html">Services</a>
+          <a href="our-work.html">Our Work</a>
+          <a href="resources.html">Resources</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="navbar__cta">
+          <a href="contact.html" class="btn btn--outline"
+            >Let's Grow Together</a
+          >
+        </div>
+
+        <button
+          class="navbar__toggle"
+          id="navToggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow">Grow Higher.</span>
+          <h1>Intentional Growth.<br />Lasting Impact.</h1>
+          <p>
+            We help eCommerce and consumer brands grow with data-driven
+            strategies, creative campaigns, and meaningful digital experiences.
+          </p>
+          <div class="hero__actions">
+            <a href="what-we-do.html" class="btn btn--solid">Our Services</a>
+            <a href="contact.html" class="btn btn--outline">Let's Talk</a>
+          </div>
+        </div>
+        <div class="hero__media">
+          <!-- Reemplaza src con la imagen real del laptop/dashboard -->
+          <div
+            style="
+              width: 100%;
+              aspect-ratio: 4/3;
+              background: linear-gradient(135deg, #0e1c15 0%, #162b1e 100%);
+              border-radius: 24px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <i
+              data-lucide="monitor"
+              style="width: 80px; height: 80px; color: #2f6b4f; opacity: 0.4"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT + OUR FOCUS ===== -->
+    <section class="about-focus">
+      <div class="container">
+        <div class="about-focus__inner">
+          <!-- About -->
+          <div class="about">
+            <p class="about__label">About Altiora</p>
+            <div class="eyebrow-underline"></div>
+            <br />
+            <p class="about__text">
+              A Growth &amp; Analytics Partner dedicated to helping businesses
+              rise higher through intentional growth. By combining strategy,
+              creativity, and data-driven insights, we help organizations make
+              smarter decisions and build sustainable success.<br /><br />
+              Inspired by the pursuit of higher things, we believe lasting
+              growth takes patience and every decision should be guided by
+              purpose.
+            </p>
+          </div>
+
+          <!-- Our Focus -->
+          <div class="focus">
+            <p class="focus__label">Our Focus</p>
+            <div class="eyebrow-underline"></div>
+            <div class="focus__grid">
+              <div class="focus-card">
+                <div class="focus-card__icon">
+                  <i data-lucide="trending-up"></i>
+                </div>
+                <div>
+                  <p class="focus-card__title">Ecommerce Growth</p>
+                  <p class="focus-card__desc">
+                    Intentional campaigns that drive online sales.
+                  </p>
+                </div>
+              </div>
+
+              <div class="focus-card">
+                <div class="focus-card__icon"><i data-lucide="leaf"></i></div>
+                <div>
+                  <p class="focus-card__title">Brand Building</p>
+                  <p class="focus-card__desc">
+                    Steady messaging that builds trust and recognition.
+                  </p>
+                </div>
+              </div>
+
+              <div class="focus-card">
+                <div class="focus-card__icon">
+                  <i data-lucide="pie-chart"></i>
+                </div>
+                <div>
+                  <p class="focus-card__title">Analytics &amp; Dashboards</p>
+                  <p class="focus-card__desc">
+                    Visibility into performance, profitability, and KPIs.
+                  </p>
+                </div>
+              </div>
+
+              <div class="focus-card">
+                <div class="focus-card__icon"><i data-lucide="video"></i></div>
+                <div>
+                  <p class="focus-card__title">Content That Converts</p>
+                  <p class="focus-card__desc">
+                    Meaningful social content that drives website traffic.
+                  </p>
+                </div>
+              </div>
+
+              <div class="focus-card">
+                <div class="focus-card__icon"><i data-lucide="users"></i></div>
+                <div>
+                  <p class="focus-card__title">Customer Acquisition</p>
+                  <p class="focus-card__desc">
+                    Turning visitors into loyal customers.
+                  </p>
+                </div>
+              </div>
+
+              <div class="focus-card">
+                <div class="focus-card__icon">
+                  <i data-lucide="refresh-cw"></i>
+                </div>
+                <div>
+                  <p class="focus-card__title">Continuous Optimization</p>
+                  <p class="focus-card__desc">
+                    Using data to improve ROI and growth.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <div class="about-quote">
+      <div class="container">
+        <p>
+          We combine strategy, creativity, and analytics to help businesses grow
+          intentionally and sustainably.
+        </p>
+      </div>
+    </div>
+
+    <!-- ===== PARTNERSHIP TIMELINE ===== -->
+    <section class="timeline-section">
+      <div class="container">
+        <div class="timeline-section__header">
+          <h2>Partnership That Drives Real Growth</h2>
+        </div>
+        <div class="partnership-grid">
+          <div class="partnership-item">
+            <div class="partnership-item__icon">
+              <i data-lucide="target"></i>
+            </div>
+            <p class="partnership-item__title">Strategy First</p>
+            <p class="partnership-item__desc">
+              Every decision is rooted in strategy, not guesswork.
+            </p>
+          </div>
+
+          <div class="partnership-item">
+            <div class="partnership-item__icon">
+              <i data-lucide="search"></i>
+            </div>
+            <p class="partnership-item__title">Data-Driven Insights</p>
+            <p class="partnership-item__desc">
+              We turn data into clarity and action.
+            </p>
+          </div>
+
+          <div class="partnership-item">
+            <div class="partnership-item__icon">
+              <i data-lucide="lightbulb"></i>
+            </div>
+            <p class="partnership-item__title">Creative That Performs</p>
+            <p class="partnership-item__desc">
+              Beautiful content with a purpose.
+            </p>
+          </div>
+
+          <div class="partnership-item">
+            <div class="partnership-item__icon">
+              <i data-lucide="bar-chart-2"></i>
+            </div>
+            <p class="partnership-item__title">Measurable Impact</p>
+            <p class="partnership-item__desc">
+              We focus on metrics that move the needle.
+            </p>
+          </div>
+
+          <div class="partnership-item">
+            <div class="partnership-item__icon">
+              <i data-lucide="handshake"></i>
+            </div>
+            <p class="partnership-item__title">Long-Term Partnerships</p>
+            <p class="partnership-item__desc">
+              We grow with you, not just for you.
+            </p>
+          </div>
+
+          <div class="partnership-item">
+            <div class="partnership-item__icon">
+              <i data-lucide="sprout"></i>
+            </div>
+            <p class="partnership-item__title">Sustainable Growth</p>
+            <p class="partnership-item__desc">
+              Growth that's built to last, not just spike.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section class="team-section">
+      <div class="container">
+        <div class="team-section__header">
+          <span class="eyebrow">Meet Our Team</span>
+          <h2>The People Behind Your Growth</h2>
+        </div>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-card__photo team-card__photo--placeholder">
+              <i
+                data-lucide="user"
+                style="width: 60px; height: 60px; color: #a0a89e"
+              ></i>
+            </div>
+            <p class="team-card__name">Alejandra Gomez</p>
+            <p class="team-card__role">CEO &amp; Growth Strategist</p>
+            <p class="team-card__bio">
+              Visionary leader with a passion for driving growth and building
+              lasting partnerships.
+            </p>
+            <div class="team-card__socials">
+              <a href="#" aria-label="LinkedIn"
+                ><i data-lucide="linkedin"></i
+              ></a>
+              <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-card__photo team-card__photo--placeholder">
+              <i
+                data-lucide="user"
+                style="width: 60px; height: 60px; color: #a0a89e"
+              ></i>
+            </div>
+            <p class="team-card__name">Laura Restrepo</p>
+            <p class="team-card__role">
+              Digital Growth &amp; Marketing Analyst
+            </p>
+            <p class="team-card__bio">
+              Data-driven analyst focused on performance, insights, and
+              measurable growth.
+            </p>
+            <div class="team-card__socials">
+              <a href="#" aria-label="LinkedIn"
+                ><i data-lucide="linkedin"></i
+              ></a>
+              <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-card__photo team-card__photo--placeholder">
+              <i
+                data-lucide="user"
+                style="width: 60px; height: 60px; color: #a0a89e"
+              ></i>
+            </div>
+            <p class="team-card__name">Maria Paula</p>
+            <p class="team-card__role">Digital Strategist</p>
+            <p class="team-card__bio">
+              Strategic thinker who crafts plans that connect brands with the
+              right audiences.
+            </p>
+            <div class="team-card__socials">
+              <a href="#" aria-label="LinkedIn"
+                ><i data-lucide="linkedin"></i
+              ></a>
+              <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-card__photo team-card__photo--placeholder">
+              <i
+                data-lucide="user"
+                style="width: 60px; height: 60px; color: #a0a89e"
+              ></i>
+            </div>
+            <p class="team-card__name">Creative Media Designer</p>
+            <p class="team-card__role">Creative Media Designer</p>
+            <p class="team-card__bio">
+              Creative mind behind engaging visuals and content that brings
+              brands to life.
+            </p>
+            <div class="team-card__socials">
+              <a href="#" aria-label="LinkedIn"
+                ><i data-lucide="linkedin"></i
+              ></a>
+              <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BAND ===== -->
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-band__inner">
+          <div class="cta-band__left">
+            <div class="cta-band__icon"><i data-lucide="sprout"></i></div>
+            <div>
+              <p class="cta-band__title">Ready to grow higher?</p>
+              <p class="cta-band__sub">
+                Let's build a strategy that drives real results for your
+                business.
+              </p>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn--solid">Let's Talk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <!-- Brand -->
+          <div class="footer__brand">
+            <div class="footer__brand-logo">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 30 L18 6 L32 30"
+                  stroke="#4ade80"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <path
+                  d="M24 18 L32 10"
+                  stroke="#2f6b4f"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+              </svg>
+              <span class="footer__brand-text">
+                <span class="brand-name">ALTIORA</span>
+                <span class="brand-sub">MEDIA</span>
+              </span>
+            </div>
+            <p class="footer__tagline">
+              A Growth &amp; Analytics Partner dedicated to helping businesses
+              rise higher through intentional growth.
+            </p>
+            <div class="footer__socials">
+              <a href="#" aria-label="LinkedIn"
+                ><i data-lucide="linkedin"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i data-lucide="instagram"></i
+              ></a>
+              <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <p class="footer__col-title">Quick Links</p>
+            <nav class="footer__links">
+              <a href="about.html">About Us</a>
+              <a href="what-we-do.html">Services</a>
+              <a href="our-work.html">Our Work</a>
+              <a href="resources.html">Resources</a>
+              <a href="contact.html">Contact</a>
+            </nav>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <p class="footer__col-title">Contact Us</p>
+            <ul class="footer__contact-list">
+              <li class="footer__contact-item">
+                <i data-lucide="mail"></i>
+                <span>hello@altioramedia.com</span>
+              </li>
+              <li class="footer__contact-item">
+                <i data-lucide="phone"></i>
+                <span>(864) 905-8261</span>
+              </li>
+              <li class="footer__contact-item">
+                <i data-lucide="map-pin"></i>
+                <span>Greenville, SC</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>&copy; 2025 Altiora Media. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="js/particles.js"></script>
+  </body>
+</html>

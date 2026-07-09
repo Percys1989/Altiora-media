@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  /* ---- Colores: fondos oscuros ---- */
+  --color-bg-dark: #0a1510; /* fondo principal oscuro (hero, footer) */
+  --color-bg-dark-2: #0e1c15; /* paneles ligeramente más claros sobre el oscuro (tarjetas timeline) */
+  --color-bg-dark-card: #10241a; /* fondo de íconos circulares oscuros */
+
+  /* ---- Colores: fondos claros ---- */
+  --color-bg-light: #f4f3ee; /* fondo hueso de secciones claras */
+  --color-bg-card: #ffffff; /* tarjetas sobre fondo claro */
+
+  /* ---- Verdes de marca ---- */
+  --color-primary: #2f6b4f; /* verde botones sólidos */
+  --color-primary-hover: #255a41;
+  --color-accent: #4ade80; /* verde brillante: eyebrows, íconos, líneas */
+  --color-accent-soft: #86e3a8; /* variante más suave para hover/detalles */
+
+  /* ---- Texto ---- */
+  --color-text-dark: #12190f; /* texto principal sobre fondo claro */
+  --color-text-dark-muted: #4a534a;
+  --color-text-light: #ffffff; /* texto principal sobre fondo oscuro */
+  --color-text-light-muted: #b9c4bc;
+
+  /* ---- Bordes ---- */
+  --color-border-light: #e2e0d8;
+  --color-border-dark: #22352a;
+
+  /* ---- Tipografía ---- */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* ---- Layout ---- */
+  --container-width: 1180px;
+  --section-padding: 100px;
+  --section-padding-mobile: 60px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+
+  /* ---- Sombras ---- */
+  --shadow-card: 0 4px 20px rgba(10, 21, 16, 0.06);
+  --shadow-card-hover: 0 10px 30px rgba(10, 21, 16, 0.12);
+}
+
+/* ---- Reset ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-light);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* ---- Layout utilities ---- */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.section--dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+}
+
+.section--light {
+  background-color: var(--color-bg-light);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.eyebrow-underline {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+/* ---- Botones ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn--solid {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+.btn--solid:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  background-color: transparent;
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-text-light);
+}
+
+.btn--outline:hover {
+  background-color: rgba(74, 222, 128, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn--outline-dark {
+  background-color: transparent;
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-text-dark);
+}
+
+.btn--outline-dark:hover {
+  background-color: rgba(47, 107, 79, 0.08);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 968px) {
+  :root {
+    --section-padding: var(--section-padding-mobile);
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+}

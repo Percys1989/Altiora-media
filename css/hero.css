@@ -1,0 +1,132 @@
+/* ==========================================================================
+   ALTIORA MEDIA — hero.css
+   ========================================================================== */
+
+.hero {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  padding: 70px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Canvas de partículas — queda detrás de todo el contenido */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* El contenido del hero debe quedar sobre el canvas */
+.hero__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animación de entrada al cargar */
+.hero__content .eyebrow,
+.hero__content h1,
+.hero__content p,
+.hero__actions {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: heroFadeUp 0.7s ease forwards;
+}
+
+.hero__content .eyebrow {
+  animation-delay: 0.1s;
+}
+.hero__content h1 {
+  animation-delay: 0.25s;
+}
+.hero__content p {
+  animation-delay: 0.4s;
+}
+.hero__actions {
+  animation-delay: 0.55s;
+}
+
+.hero__media {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: heroFadeRight 0.8s ease 0.3s forwards;
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero__inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 32px 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero__content h1 {
+  font-size: 3rem;
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+}
+
+.hero__content p {
+  font-size: 1.05rem;
+  color: var(--color-text-light-muted);
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero__media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 968px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    padding-bottom: 50px;
+  }
+
+  .hero__content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero__content p {
+    max-width: 100%;
+  }
+
+  .hero__media {
+    order: -1;
+  }
+}
