@@ -10,6 +10,9 @@
 
 .team-section__header .eyebrow {
   margin-bottom: 8px;
+  color: #255a41;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .team-section__header h2 {

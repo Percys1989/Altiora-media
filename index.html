@@ -47,29 +47,11 @@
     <header class="navbar">
       <div class="navbar__inner">
         <a href="index.html" class="navbar__logo">
-          <!-- Reemplaza con: <img src="images/logo/altiora-logo.svg" alt="Altiora Media"> -->
-          <svg
-            width="36"
-            height="36"
-            viewBox="0 0 36 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 30 L18 6 L32 30"
-              stroke="#4ade80"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              fill="none"
-            />
-            <path
-              d="M24 18 L32 10"
-              stroke="#2f6b4f"
-              stroke-width="3"
-              stroke-linecap="round"
-            />
-          </svg>
+          <img
+            class="navbar__logo-text"
+            alt="Altioria Media"
+            src="simples/imagenes/logo/Logo.jpeg"
+          />
           <span class="navbar__logo-text">
             <span class="brand-name">ALTIORA</span>
             <span class="brand-sub">MEDIA</span>
@@ -78,10 +60,7 @@
 
         <nav class="navbar__links" id="navLinks">
           <a href="index.html" class="active">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="what-we-do.html">Services</a>
-          <a href="our-work.html">Our Work</a>
-          <a href="resources.html">Resources</a>
+          <a href="what-we-do.html">What We Do</a>
           <a href="contact.html">Contact</a>
         </nav>
 
@@ -114,27 +93,17 @@
             strategies, creative campaigns, and meaningful digital experiences.
           </p>
           <div class="hero__actions">
-            <a href="what-we-do.html" class="btn btn--solid">Our Services</a>
+            <a href="what-we-do.html" class="btn btn--solid">What We Do</a>
             <a href="contact.html" class="btn btn--outline">Let's Talk</a>
           </div>
         </div>
         <div class="hero__media">
-          <!-- Reemplaza src con la imagen real del laptop/dashboard -->
-          <div
-            style="
-              width: 100%;
-              aspect-ratio: 4/3;
-              background: linear-gradient(135deg, #0e1c15 0%, #162b1e 100%);
-              border-radius: 24px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <i
-              data-lucide="monitor"
-              style="width: 80px; height: 80px; color: #2f6b4f; opacity: 0.4"
-            ></i>
+          <div class="hero-image-wrapper">
+            <img
+              src="simples/hero/hero2.webp"
+              alt="Altiora Media Hero Image"
+              class="hero-image"
+            />
           </div>
         </div>
       </div>
@@ -337,12 +306,6 @@
               Visionary leader with a passion for driving growth and building
               lasting partnerships.
             </p>
-            <div class="team-card__socials">
-              <a href="#" aria-label="LinkedIn"
-                ><i data-lucide="linkedin"></i
-              ></a>
-              <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
-            </div>
           </div>
 
           <div class="team-card">
@@ -360,12 +323,6 @@
               Data-driven analyst focused on performance, insights, and
               measurable growth.
             </p>
-            <div class="team-card__socials">
-              <a href="#" aria-label="LinkedIn"
-                ><i data-lucide="linkedin"></i
-              ></a>
-              <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
-            </div>
           </div>
 
           <div class="team-card">
@@ -381,12 +338,6 @@
               Strategic thinker who crafts plans that connect brands with the
               right audiences.
             </p>
-            <div class="team-card__socials">
-              <a href="#" aria-label="LinkedIn"
-                ><i data-lucide="linkedin"></i
-              ></a>
-              <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
-            </div>
           </div>
 
           <div class="team-card">
@@ -396,18 +347,12 @@
                 style="width: 60px; height: 60px; color: #a0a89e"
               ></i>
             </div>
-            <p class="team-card__name">Creative Media Designer</p>
+            <p class="team-card__name">Michelle Moncada</p>
             <p class="team-card__role">Creative Media Designer</p>
             <p class="team-card__bio">
               Creative mind behind engaging visuals and content that brings
               brands to life.
             </p>
-            <div class="team-card__socials">
-              <a href="#" aria-label="LinkedIn"
-                ><i data-lucide="linkedin"></i
-              ></a>
-              <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
-            </div>
           </div>
         </div>
       </div>
@@ -418,7 +363,7 @@
       <div class="container">
         <div class="cta-band__inner">
           <div class="cta-band__left">
-            <div class="cta-band__icon"><i data-lucide="sprout"></i></div>
+            <div class="cta-band__icon"></div>
             <div>
               <p class="cta-band__title">Ready to grow higher?</p>
               <p class="cta-band__sub">
@@ -427,7 +372,10 @@
               </p>
             </div>
           </div>
-          <a href="contact.html" class="btn btn--solid">Let's Talk</a>
+          <!--Colocar el icono dentro del boton -->
+          <a href="contact.html" class="btn btn--solid"
+            ><i data-lucide="sprout"></i>Let's Talk</a
+          >
         </div>
       </div>
     </section>
@@ -477,7 +425,6 @@
               <a href="#" aria-label="Instagram"
                 ><i data-lucide="instagram"></i
               ></a>
-              <a href="#" aria-label="Email"><i data-lucide="mail"></i></a>
             </div>
           </div>
 
@@ -485,10 +432,7 @@
           <div>
             <p class="footer__col-title">Quick Links</p>
             <nav class="footer__links">
-              <a href="about.html">About Us</a>
-              <a href="what-we-do.html">Services</a>
-              <a href="our-work.html">Our Work</a>
-              <a href="resources.html">Resources</a>
+              <a href="what-we-do.html">What We Do</a>
               <a href="contact.html">Contact</a>
             </nav>
           </div>
@@ -499,22 +443,14 @@
             <ul class="footer__contact-list">
               <li class="footer__contact-item">
                 <i data-lucide="mail"></i>
-                <span>hello@altioramedia.com</span>
-              </li>
-              <li class="footer__contact-item">
-                <i data-lucide="phone"></i>
-                <span>(864) 905-8261</span>
-              </li>
-              <li class="footer__contact-item">
-                <i data-lucide="map-pin"></i>
-                <span>Greenville, SC</span>
+                <span>contact@altiora-media.com</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div class="footer__bottom">
-          <p>&copy; 2025 Altiora Media. All rights reserved.</p>
+          <p>&copy; 2025 Altiora-Media. All rights reserved.</p>
         </div>
       </div>
     </footer>

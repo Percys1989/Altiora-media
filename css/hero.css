@@ -1,16 +1,17 @@
-/* ==========================================================================
-   ALTIORA MEDIA — hero.css
-   ========================================================================== */
+/* HERO */
 
 .hero {
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-light);
-  padding: 70px 0 0;
-  overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
 }
 
-/* Canvas de partículas — queda detrás de todo el contenido */
+/*PARTICLES */
+
 #hero-canvas {
   position: absolute;
   inset: 0;
@@ -20,20 +21,25 @@
   z-index: 0;
 }
 
-/* El contenido del hero debe quedar sobre el canvas */
+/* GRID*/
+
 .hero__inner {
   position: relative;
-  z-index: 1;
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 32px 70px;
+  z-index: 5;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 45% 55%;
   align-items: center;
-  gap: 48px;
+  min-height: 100vh;
+  padding-left: 8%;
 }
 
-/* Animación de entrada al cargar */
+.hero__content {
+  position: relative;
+  z-index: 10;
+  max-width: 620px;
+}
+
 .hero__content .eyebrow,
 .hero__content h1,
 .hero__content p,
@@ -46,60 +52,128 @@
 .hero__content .eyebrow {
   animation-delay: 0.1s;
 }
+
 .hero__content h1 {
   animation-delay: 0.25s;
 }
+
 .hero__content p {
   animation-delay: 0.4s;
 }
+
 .hero__actions {
   animation-delay: 0.55s;
 }
 
-.hero__media {
-  position: relative;
-  overflow: visible;
-  opacity: 0;
-  transform: translateX(30px);
-  animation: heroFadeRight 0.8s ease 0.3s forwards;
-}
-
-/* Imagen/placeholder: bordes difuminados hacia el fondo oscuro */
-.hero__media img,
-.hero__media > div {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 0;
-  -webkit-mask-image: radial-gradient(
-    ellipse 85% 85% at 55% 50%,
-    black 38%,
-    transparent 100%
-  );
-  mask-image: radial-gradient(
-    ellipse 85% 85% at 55% 50%,
-    black 38%,
-    transparent 100%
-  );
-}
-
 .hero__content h1 {
   font-size: 3rem;
-  color: var(--color-text-light);
+  line-height: 1.05;
   margin-bottom: 20px;
+  color: var(--color-text-light);
 }
 
 .hero__content p {
-  font-size: 1.05rem;
-  color: var(--color-text-light-muted);
   max-width: 480px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text-light-muted);
   margin-bottom: 32px;
 }
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
 
 .hero__actions {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
 }
+
+/* ==========================================================
+   HERO IMAGE
+========================================================== */
+
+.hero__media {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(30px);
+  animation: heroFadeRight 0.8s ease 0.3s forwards;
+}
+
+.hero-image-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.03);
+  transition: transform 0.8s ease;
+}
+
+/* Overlay */
+
+.hero-image-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  z-index: 2;
+}
+
+/* Fade hacia el texto */
+
+.hero-image-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 48%;
+  height: 100%;
+
+  background: linear-gradient(
+    to right,
+
+    #07110d 0%,
+
+    rgba(7, 17, 13, 0.98) 12%,
+
+    rgba(7, 17, 13, 0.92) 28%,
+
+    rgba(7, 17, 13, 0.72) 50%,
+
+    rgba(7, 17, 13, 0.35) 70%,
+
+    transparent 100%
+  );
+
+  z-index: 3;
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
 
 @keyframes heroFadeUp {
   to {
@@ -115,36 +189,79 @@
   }
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 968px) {
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 1200px) {
   .hero__inner {
-    grid-template-columns: 1fr;
-    padding-bottom: 50px;
+    grid-template-columns: 1fr 1fr;
+
+    padding-left: 5%;
   }
 
+  .hero__content h1 {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding: 120px 0 60px;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+
+    padding: 0 30px;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__media {
+    height: 420px;
+
+    margin-top: 40px;
+
+    order: -1;
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+
+    height: 100%;
+  }
+
+  .hero-image-wrapper::after {
+    width: 100%;
+
+    background: linear-gradient(
+      to bottom,
+
+      rgba(7, 17, 13, 0.15),
+      rgba(7, 17, 13, 0.85)
+    );
+  }
+}
+
+@media (max-width: 768px) {
   .hero__content h1 {
     font-size: 2.2rem;
   }
 
   .hero__content p {
-    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+
+    align-items: flex-start;
   }
 
   .hero__media {
-    order: -1;
-  }
-
-  .hero__media img,
-  .hero__media > div {
-    -webkit-mask-image: radial-gradient(
-      ellipse 90% 80% at 50% 50%,
-      black 35%,
-      transparent 100%
-    );
-    mask-image: radial-gradient(
-      ellipse 90% 80% at 50% 50%,
-      black 35%,
-      transparent 100%
-    );
+    height: 320px;
   }
 }
