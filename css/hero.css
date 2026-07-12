@@ -1,5 +1,3 @@
-/* HERO */
-
 .hero {
   position: relative;
   display: flex;
@@ -10,8 +8,7 @@
   color: var(--color-text-light);
 }
 
-/*PARTICLES */
-
+/* ---- Canvas partículas — detrás de todo ---- */
 #hero-canvas {
   position: absolute;
   inset: 0;
@@ -21,95 +18,18 @@
   z-index: 0;
 }
 
-/* GRID*/
-
-.hero__inner {
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 45% 55%;
-  align-items: center;
-  min-height: 100vh;
-  padding-left: 8%;
-}
-
-.hero__content {
-  position: relative;
-  z-index: 10;
-  max-width: 620px;
-}
-
-.hero__content .eyebrow,
-.hero__content h1,
-.hero__content p,
-.hero__actions {
-  opacity: 0;
-  transform: translateY(28px);
-  animation: heroFadeUp 0.7s ease forwards;
-}
-
-.hero__content .eyebrow {
-  animation-delay: 0.1s;
-}
-
-.hero__content h1 {
-  animation-delay: 0.25s;
-}
-
-.hero__content p {
-  animation-delay: 0.4s;
-}
-
-.hero__actions {
-  animation-delay: 0.55s;
-}
-
-.hero__content h1 {
-  font-size: 3rem;
-  line-height: 1.05;
-  margin-bottom: 20px;
-  color: var(--color-text-light);
-}
-
-.hero__content p {
-  max-width: 480px;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--color-text-light-muted);
-  margin-bottom: 32px;
-}
-
-/* ==========================================================
-   BUTTONS
-========================================================== */
-
-.hero__actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-/* ==========================================================
-   HERO IMAGE
-========================================================== */
-
+/* ---- Imagen de fondo: ocupa mitad derecha, siempre fija ---- */
 .hero__media {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateX(30px);
-  animation: heroFadeRight 0.8s ease 0.3s forwards;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100%;
+  z-index: 1;
 }
 
 .hero-image-wrapper {
-  position: absolute;
-  inset: 0;
+  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -121,60 +41,152 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  transform: scale(1.03);
-  transition: transform 0.8s ease;
 }
 
-/* Overlay */
-
+/* Overlay oscuro sutil sobre la imagen */
 .hero-image-wrapper::before {
   content: "";
-
   position: absolute;
-
   inset: 0;
-
-  background: rgba(0, 0, 0, 0.25);
-
+  background: rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
 
-/* Fade hacia el texto */
-
+/* Gradiente que fusiona la imagen con el fondo oscuro — siempre igual */
 .hero-image-wrapper::after {
   content: "";
-
   position: absolute;
-
   top: 0;
   left: 0;
-
-  width: 48%;
+  width: 65%;
   height: 100%;
-
   background: linear-gradient(
     to right,
-
-    #07110d 0%,
-
-    rgba(7, 17, 13, 0.98) 12%,
-
-    rgba(7, 17, 13, 0.92) 28%,
-
-    rgba(7, 17, 13, 0.72) 50%,
-
-    rgba(7, 17, 13, 0.35) 70%,
-
+    #0a1510 0%,
+    #0a1510 8%,
+    rgba(10, 21, 16, 0.96) 18%,
+    rgba(10, 21, 16, 0.85) 32%,
+    rgba(10, 21, 16, 0.6) 50%,
+    rgba(10, 21, 16, 0.25) 68%,
+    rgba(10, 21, 16, 0.08) 85%,
     transparent 100%
   );
-
-  z-index: 3;
+  z-index: 2;
 }
 
-/* ==========================================================
-   ANIMATIONS
-========================================================== */
+/* ---- Contenido izquierda — z-index alto para quedar sobre todo ---- */
+.hero__inner {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 680px;
+  padding: 80px 0 80px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
 
+/* ---- Logo hero ---- */
+.hero__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 48px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeUp 0.7s ease 0.05s forwards;
+}
+
+.hero__logo-image {
+  width: 100px;
+  height: 72px;
+}
+
+.hero__logo-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.hero__logo-name .brand-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.9rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-light);
+}
+
+.hero__logo-name .brand-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.hero__logo-name .brand-divider::before,
+.hero__logo-name .brand-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-accent);
+  width: 28px;
+}
+
+.hero__logo-name .brand-sub {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.45em;
+  color: var(--color-accent);
+}
+
+/* ---- Texto hero ---- */
+.hero__content .eyebrow,
+.hero__content h1,
+.hero__content p,
+.hero__actions {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: heroFadeUp 0.7s ease forwards;
+}
+
+.hero__content .eyebrow {
+  animation-delay: 0.15s;
+}
+.hero__content h1 {
+  animation-delay: 0.28s;
+}
+.hero__content p {
+  animation-delay: 0.42s;
+}
+.hero__actions {
+  animation-delay: 0.56s;
+}
+
+.hero__content h1 {
+  font-size: 3.2rem;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  color: var(--color-text-light);
+}
+
+.hero__content p {
+  max-width: 460px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text-light-muted);
+  margin-bottom: 36px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ---- Keyframes ---- */
 @keyframes heroFadeUp {
   to {
     opacity: 1;
@@ -182,86 +194,67 @@
   }
 }
 
-@keyframes heroFadeRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
-
+/* ---- Responsive ---- */
 @media (max-width: 1200px) {
   .hero__inner {
-    grid-template-columns: 1fr 1fr;
-
     padding-left: 5%;
+    max-width: 580px;
   }
 
-  .hero__content h1 {
-    font-size: 2.6rem;
+  .hero__media {
+    width: 60%;
   }
 }
 
 @media (max-width: 992px) {
   .hero {
-    padding: 120px 0 60px;
-  }
-
-  .hero__inner {
-    grid-template-columns: 1fr;
-
-    padding: 0 30px;
-  }
-
-  .hero__content {
-    max-width: 100%;
+    min-height: unset;
+    padding: 50px 0 70px;
   }
 
   .hero__media {
-    height: 420px;
-
-    margin-top: 40px;
-
-    order: -1;
+    display: none;
   }
-
-  .hero-image-wrapper {
-    position: relative;
-
-    height: 100%;
+  .hero__logo {
+    display: none;
   }
 
   .hero-image-wrapper::after {
     width: 100%;
-
     background: linear-gradient(
       to bottom,
-
-      rgba(7, 17, 13, 0.15),
-      rgba(7, 17, 13, 0.85)
+      rgba(7, 17, 13, 0.5) 0%,
+      rgba(7, 17, 13, 0.92) 100%
     );
+  }
+
+  .hero__inner {
+    min-height: unset;
+    padding: 0 24px;
+    max-width: 100%;
+  }
+
+  .hero__content h1 {
+    font-size: 2.4rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .hero__content h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero__content p {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   .hero__actions {
     flex-direction: column;
-
     align-items: flex-start;
   }
 
-  .hero__media {
-    height: 320px;
+  .hero__logo-name .brand-name {
+    font-size: 1.5rem;
+  }
+
+  .hero__logo-icon {
+    width: 56px;
+    height: 56px;
   }
 }
