@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/ctaband.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/preloader.css" />
+    <link rel="stylesheet" href="css/modal.css" />
   </head>
   <body class="is-loading">
     <!-- ===== PRELOADER ===== -->
@@ -61,13 +62,13 @@
         <nav class="navbar__links" id="navLinks">
           <a href="index.html" class="active">Home</a>
           <a href="what-we-do.html">What We Do</a>
-          <a href="contact.html">Contact</a>
+          <a href="#" class="open-modal">Contact</a>
         </nav>
 
         <div class="navbar__cta">
-          <a href="contact.html" class="btn btn--outline"
-            >Let's Grow Together</a
-          >
+          <a href="#" class="btn btn--outline" id="navCTA">
+            Let's Grow Together
+          </a>
         </div>
 
         <button
@@ -120,7 +121,7 @@
             <a href="what-we-do.html" class="btn btn--solid"
               >What We Do &nbsp;→</a
             >
-            <a href="contact.html" class="btn btn--outline"
+            <a href="#" class="btn btn--outline open-modal"
               >Let's Talk &nbsp;→</a
             >
           </div>
@@ -393,7 +394,7 @@
               </p>
             </div>
           </div>
-          <a href="contact.html" class="btn btn--cta">
+          <a href="#" class="btn btn--cta open-modal">
             <i data-lucide="sprout"></i>
             Let's Talk
           </a>
@@ -408,7 +409,11 @@
           <!-- Brand -->
           <div class="footer__brand">
             <div class="footer__brand-logo">
-           <img src="simples/imagenes/logo/Logosinletras.png" alt="" srcset="">
+              <img
+                src="simples/imagenes/logo/Logosinletras.png"
+                alt=""
+                srcset=""
+              />
               <span class="footer__brand-text">
                 <span class="brand-name">ALTIORA</span>
                 <span class="brand-sub">MEDIA</span>
@@ -461,7 +466,7 @@
             <p class="footer__col-title">Quick Links</p>
             <nav class="footer__links">
               <a href="what-we-do.html">What We Do</a>
-              <a href="contact.html">Contact</a>
+              <a href="#" class="open-modal">Contact</a>
             </nav>
           </div>
 
@@ -482,6 +487,120 @@
         </div>
       </div>
     </footer>
+    <!-- ===== BOTÓN FLOTANTE ===== -->
+    <button class="fab" id="fabContact" aria-label="Contáctanos">
+      <span class="fab__tooltip">Let's Talk</span>
+      <i data-lucide="message-circle"></i>
+    </button>
+
+    <!-- ===== MODAL CONTACTO ===== -->
+    <div
+      class="modal-overlay"
+      id="contactModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal">
+        <div class="modal__header">
+          <div class="modal__header-text">
+            <span class="eyebrow">Get in touch</span>
+            <h3 id="modalTitle">Let's Grow Together</h3>
+            <p>Tell us about your brand and goals — we'll be in touch soon.</p>
+          </div>
+          <button class="modal__close" id="modalClose" aria-label="Cerrar">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <div class="modal__body">
+          <form class="contact-form" id="contactForm" novalidate>
+            <!-- Honeypot anti-spam -->
+            <input
+              type="text"
+              name="website"
+              class="form-honeypot"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Full Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Jane Smith"
+                  required
+                />
+              </div>
+              <div class="form-field">
+                <label for="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="jane@company.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="company">Company</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Your Company"
+                />
+              </div>
+              <div class="form-field">
+                <label for="service">Service of Interest</label>
+                <select id="service" name="service">
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="Ecommerce Growth">Ecommerce Growth</option>
+                  <option value="Brand Building">Brand Building</option>
+                  <option value="Analytics & Dashboards">
+                    Analytics &amp; Dashboards
+                  </option>
+                  <option value="Content That Converts">
+                    Content That Converts
+                  </option>
+                  <option value="Customer Acquisition">
+                    Customer Acquisition
+                  </option>
+                  <option value="Continuous Optimization">
+                    Continuous Optimization
+                  </option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us about your brand, goals, and how we can help..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-response" id="formResponse"></div>
+
+            <button type="submit" class="form-submit">
+              <i data-lucide="send"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <script src="js/preloader.js"></script>
     <script src="js/main.js"></script>
@@ -489,5 +608,6 @@
       lucide.createIcons();
     </script>
     <script src="js/particles.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>
