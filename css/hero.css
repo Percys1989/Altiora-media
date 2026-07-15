@@ -18,6 +18,54 @@
   z-index: 0;
 }
 
+/* ---- ondas — detrás de todo ---- */
+.hero-waves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  display: none;
+}
+
+.waves {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 100%;
+}
+
+.wave-parallax > use {
+  animation: waveMove 18s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.wave-parallax > use:nth-child(1) {
+  animation-duration: 18s;
+  animation-delay: -2s;
+}
+.wave-parallax > use:nth-child(2) {
+  animation-duration: 14s;
+  animation-delay: -4s;
+}
+.wave-parallax > use:nth-child(3) {
+  animation-duration: 20s;
+  animation-delay: -6s;
+}
+.wave-parallax > use:nth-child(4) {
+  animation-duration: 16s;
+  animation-delay: -8s;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
 /* ---- Imagen de fondo: ocupa mitad derecha, siempre fija ---- */
 .hero__media {
   position: absolute;
@@ -211,7 +259,13 @@
     min-height: unset;
     padding: 50px 0 70px;
   }
+  .hero-waves {
+    display: block;
+  }
 
+  #hero-canvas {
+    display: none;
+  }
   .hero__media {
     display: none;
   }
