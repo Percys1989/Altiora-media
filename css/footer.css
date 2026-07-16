@@ -47,7 +47,7 @@
 }
 
 .footer__socials {
-  display: flex;
+  display: none;
   gap: 16px;
 }
 
